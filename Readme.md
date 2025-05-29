@@ -17,7 +17,8 @@ pytest + pytest-django
 
 logging
 ## Структура
-`
+
+```
 app
   backend - Логика: модели, сериализаторы, вьюхи, сервисы
   PaymentSystem - Настройки Django
@@ -33,7 +34,8 @@ mysql
 docker-compose.yml
 
 .env - нужно создать ENV-переменные
-`
+```
+
 ## Установка и запуск
 
 Создайте .env по шаблону: .example_env
