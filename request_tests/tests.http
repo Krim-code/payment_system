@@ -1,0 +1,35 @@
+### Новый платеж — должен пройти
+POST http://127.0.0.1:8000/api/webhook/bank/
+Content-Type: application/json
+
+{
+  "operation_id": "11111111-2222-3333-4444-555555555555",
+  "amount": 145000,
+  "payer_inn": "1234567890",
+  "document_number": "PAY-328",
+  "document_date": "2024-04-27T21:00:00Z"
+}
+
+###
+
+### Повтор платежа — должен быть обработан как дубль
+POST http://127.0.0.1:8000/api/webhook/bank/
+Content-Type: application/json
+
+{
+  "operation_id": "11111111-2222-3333-4444-555555555555",
+  "amount": 145000,
+  "payer_inn": "1234567890",
+  "document_number": "PAY-328",
+  "document_date": "2024-04-27T21:00:00Z"
+}
+
+###
+
+### Получение баланса по ИНН — должен быть 145000
+GET http://127.0.0.1:8000/api/organizations/1234567890/balance/
+
+###
+
+### Некорректный ИНН — 404
+GET http://127.0.0.1:8000/api/organizations/0000000000/balance/
