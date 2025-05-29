@@ -18,7 +18,7 @@ pytest + pytest-django
 logging
 ## Структура
 
-app:
+app
   backend - Логика: модели, сериализаторы, вьюхи, сервисы
   PaymentSystem - Настройки Django
   tests/  - Тесты pytest
