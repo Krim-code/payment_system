@@ -18,23 +18,23 @@ pytest + pytest-django
 logging
 ## Структура
 
-app/
-├── backend/                # Логика: модели, сериализаторы, вьюхи, сервисы
-├── PaymentSystem/          # Настройки Django
-├── tests/                  # Тесты pytest
-├── manage.py
-├── requirements.txt
-├── entrypoint.sh
-└── Dockerfile
+app:
+  backend - Логика: модели, сериализаторы, вьюхи, сервисы
+  PaymentSystem - Настройки Django
+  tests/  - Тесты pytest
+  manage.py
+  requirements.txt
+  entrypoint.sh
+  Dockerfile
 
-mysql/
-└── my.cnf                  # Конфигурация MySQL
+mysql
+  my.cnf - Конфигурация MySQL
 
 docker-compose.yml
 
-.env                        # нужно создать ENV-переменные
+.env - нужно создать ENV-переменные
 
-⚙️ Установка и запуск
+## Установка и запуск
 
 Создайте .env по шаблону: .example_env
 # Как поднять всё через Docker:
